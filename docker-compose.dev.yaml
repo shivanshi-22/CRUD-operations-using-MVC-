@@ -1,0 +1,13 @@
+services:
+  node-app:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    volumes:
+      - ./:/app:ro
+      - /app/node_modules
+    environment:
+      - MONGO_USER=root
+      - MONGO_PASSWORD=root
+    command: npm run dev
